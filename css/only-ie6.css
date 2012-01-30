@@ -1,0 +1,11 @@
+/*===============Layout=========================*/
+/*===============================================*/
+/*===============================================*/
+body{margin:0;background: url(../images/design/bg-overall.jpg) repeat left top;font-size:12px;font-family: OfficinaSansITCStd,Helvetica,"Trebuchet MS","Lucida Grande",arial, verdana, sans-serif;
+}
+
+
+/*===============Header=========================*/
+#main-wrapper{display:none;}
+#only-ie6,#explorer{display:block;height:400px;}
+#explorer p{color:#fafafa;}

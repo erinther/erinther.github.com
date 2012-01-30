@@ -1,0 +1,417 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="Movabletype" />
+    <meta name="keywords" content="marginpad,design,oslo,norsk,norge,web design,web development, webutvikler,php5,kohana,css,xhtml,jquery" />
+    <meta name="description" content="Margin pad" />
+
+    <title>MarginPad: Web design & development</title>
+
+<link rel="stylesheet" href="css/blueprint/screen.css" type="text/css" media="screen, projection" /> 
+<link rel="stylesheet" href="css/blueprint/print.css" type="text/css" media="print" /> 
+<link rel="stylesheet" href="css/style.css" type="text/css" media="screen, projection" /> 
+
+<!--[if IE]><link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection" /> 
+<![endif]--> 
+<script type="text/javascript" src="js/jquery/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="js/jquery/plugins/jquery.taconite.js"></script>
+<script language="JavaScript" type="text/javascript">
+//<![CDATA[
+$(document).ready(function() {
+	
+	  
+   //Start Image Loading
+   $(".screen-more a").click( function() {
+   	var screenURL = $(this).attr("href");
+   	$.get(screenURL);	
+   	return false;
+    });
+    //End Image Loading
+    
+   //Start Extending Taconite
+  $.fn.replaceAndFadeIn = function(newContentElements) {
+    return this.each(function() {
+        $(this).empty().hide().append(newContentElements).fadeIn('fast');
+    });
+};
+
+    //End Extending Taconite   
+
+  //Start Page Scroll
+  function filterPath(string) {
+  return string
+  .replace(/^\//,'')
+  .replace(/(index|default).[a-zA-Z]{3,4}$/,'')
+  .replace(/\/$/,'');
+  }
+  var locationPath = filterPath(location.pathname);
+  $('a:not(.screen-more a)[href*=#]').each(function() {
+ var thisPath = filterPath(this.pathname) || locationPath;
+ if (  locationPath == thisPath
+ && (location.hostname == this.hostname || !this.hostname)
+ && this.hash.replace(/#/,'') ) {
+   var $target = $(this.hash), target = this.hash;
+   if (target) {
+  var targetOffset = $target.offset().top;
+  $(this).click(function(event) {
+    event.preventDefault();
+    $('html, body').animate({scrollTop: targetOffset}, 600, function() {
+   location.hash = target;
+    });
+  });
+   }
+ }
+  });
+  
+  //End Page Scroll
+
+
+    
+});
+//]]>
+</script>
+
+  </head>
+
+<body id="work" class="sub-page">
+
+<div id="main-wrapper" class="wrapper">
+
+
+    <div id ="header-wrapper" class="wrapper clearfix">
+        <div class="container">
+          <div  id="header"  class="span-24 column clearfix">
+            <div id="logo" class="span-18 column ">
+             <a href="index.html">
+               <img src="images/design/logo-simple.jpg" />
+             </a>   
+            </div><!-- end #LOGO .span-18  -->
+
+                 <div id="main-navigation"  class="span-6 last column clearfix">
+                        <ul id="navigation" class="list-horizontal clearfix">
+                        <li class="home"><a href="index.html">home</a></li>
+                        <li class="work"><a href="work.html">work</a></li>
+                        <li class="service"><a href="service.html">service</a></li>
+                        <li class="weblinks"><a href="links.html">Links</a></li>
+                        <li class="contact last"><a href="contact.html">contact</a></li>
+                        </ul>
+                 </div><!-- end #main-nav  .span-NUM -->
+          </div><!-- end .span-24 #header -->
+        </div><!-- end .container -->                                                                      
+    </div><!-- end #header-wrapper -->
+
+
+    <div id ="content-wrapper" class="wrapper clearfix">
+        <div class="container ">
+             <div id="content-container"  class="span-24  column clearfix showgrid ">
+
+
+                  <div id="content"  class="span-17  append-1  column clearfix">
+
+                    <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it 
+                     a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining ess
+                     </p>
+                  </div><!-- end #content  .span-NUM -->
+
+
+
+
+
+                 <div id="sub-content"  class="span-6 last column clearfix">
+                   <h3>This is a heading</h3>                 
+	                <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since</p>
+                 </div><!-- end #sub-content  .span-NUM -->
+
+
+
+            </div><!-- end #content-container  .span-24 -->
+
+        </div><!-- end .container -->   
+    </div><!-- end #content-wrapper -->
+
+    <div id="intro-wrapper" class="wrapper clearfix">
+        <div class="container">    
+        
+          <div id="intro-selvaag" class="screen-intro span-24 column clearfix">
+              <a name="screen1"></a>
+            <div id="details-selvaag"  class="span-6 details column clearfix">
+                 <h3>Meglerhuset Selvaag</h3>
+                   <p class="work-details">
+                     Concept, design, xhtml, css,javascript
+                   </p>
+                   <p class="scroll"><a href="#intro-beepad">Next</a></p>
+                 </div><!-- end #details  .span-6 -->
+             <div id="screen-selvaag"  class="span-18 last screen column clearfix">
+                 <img src="images/screenshots/selvaag/intro.jpg" alt="Selvaag" width="710" />
+              </div><!-- end .Screen -->    
+          </div><!-- end .Screen-intro --> <div class="clear"></div>
+          
+
+          
+          
+         <div id="intro-beepad" class="screen-intro span-24 column clearfix">
+            <div id="details-beepad"  class="span-6 details column clearfix">                 
+                  <h3>Beepad</h3>
+                   <p class="work-details">
+                     Concept, design, xhtml, css, javascript, CMS integration
+                   </p>
+                   <p class="pagination screen-more">more screenshots: <br /><br />                  
+                     <a href="beepad-screen1.xml">1</a>
+                     <a href="beepad-screen2.xml">2</a>
+                     <a href="beepad-screen3.xml">3</a>
+                     <a href="beepad-screen4.xml">4</a> 
+                     <a href="beepad-screen0.xml">&lsaquo;&lsaquo;</a>                                          
+                     
+                    </p><br />
+                   <p class="scroll">
+                     <a href="#main-wrapper" >Prev</a><a href="#main-wrapper" class="goTop">Top</a><a href="#intro-skatt">Next</a>
+                   </p>                
+                 </div><!-- end #details  .span-6 -->
+             <div id="screen-beepad"  class="span-18 last screen  column clearfix"> 
+               <div id="beepad-screens" class="has-screens clearfix">                               
+                  <img src="images/screenshots/beepad/intro.jpg" alt="Beepad" width="710" />
+                </div><!-- end .Has-Screens -->          
+              </div><!-- end .Screen -->             
+            </div><!-- end .Screen-intro --> <div class="clear"></div>
+
+
+          
+          <div id="intro-skatt" class="screen-intro span-24 column clearfix">
+
+            <div id="details-skatt"  class="span-6 details column clearfix"> 
+                  <h3 >Nei til skattelister</h3>
+                   <p class="work-details">
+                     Concept, design, xhtml, css, javascript, CMS integration
+                   </p>
+                    <p class="scroll">
+                     <a href="#intro-beepad" >Prev</a><a href="#main-wrapper" class="goTop">Top</a><a href="#intro-rfid">Next</a>
+                   </p>                     
+                 </div><!-- end #details  .span-6 -->
+                 
+             <div id="screen-skatt"  class="span-18 last screen column clearfix">                    
+                 <img src="images/screenshots/skatt/intro.jpg" alt="Nei til skattelister" width="710" />
+              </div><!-- end .Screen -->  
+                                    
+         </div><!-- end .Screen-intro --> <div class="clear"></div>   
+
+         
+         
+         
+         
+         <div id="intro-rfid" class="screen-intro span-24 column clearfix">
+              <div id="details-rfid"  class="span-6 details column clearfix">
+                 <h3><a name="screen4">GS1: Rfid</a></h3>
+                   <p class="work-details">
+                     xhtml, css, javascript, CMS integration
+                   </p>
+                   <p class="scroll">
+                     <a href="#intro-skatt" >Prev</a><a href="#main-wrapper" class="goTop">Top</a><a href="#intro-tenders">Next</a>
+                   </p>  
+              </div><!-- end #details  .span-6 -->
+             <div id="screen-rfid"  class="span-18 last screen column clearfix">
+                 <img src="images/screenshots/gs1/intro.jpg" alt="GS1: Rfid" width="710" />
+              </div><!-- end .Screen -->    
+                 </div><!-- end .Screen-intro --> <div class="clear"></div>
+                 
+                 
+          
+          
+          
+
+         <div id="intro-tenders" class="screen-intro span-24 column clearfix">
+              <div id="details-tenders"  class="span-6 details column clearfix">         
+                 <h3>Tenders magazine</h3>
+                   <p class="work-details">
+                     Concept, design, xhtml, css, javascript, CMS integration
+                   </p>
+                   <p class="scroll">
+                     <a href="#intro-rfid" >Prev</a><a href="#main-wrapper" class="goTop">Top</a><a href="#intro-skier">Next</a>
+                   </p>                    
+              </div><!-- end #details  .span-6 -->
+             <div id="screen-tenders"  class="span-18 last screen column clearfix">                   
+                <img src="images/screenshots/tenders/intro.jpg" alt="Tenders Magazine"  width="710" />
+              </div><!-- end .Screen -->    
+              </div><!-- end .Screen-intro --> <div class="clear"></div>
+          
+          
+          
+
+
+         <div id="intro-skier" class="screen-intro span-24 column clearfix">
+              <div id="details-skier"  class="span-6 details column clearfix">             
+                 <h3>Skier</h3>
+                   <p class="work-details">
+                     Xhtml, css, javascript ,photo album, CMS integration
+                   </p>
+                   <p class="scroll">
+                     <a href="#intro-tenders" >Prev</a><a href="#main-wrapper" class="goTop">Top</a><a href="#intro-hertz">Next</a>
+                   </p>                    
+              </div><!-- end #details  .span-6 -->   
+             <div id="screen-skier"  class="span-18 last screen column clearfix">                                 
+              <img src="images/screenshots/skier/intro.jpg" alt="Skier"  width="710"/>
+              </div><!-- end .Screen -->                
+          </div><!-- end .Screen-intro --> <div class="clear"></div> 
+          
+          
+          
+          
+          <div id="intro-hertz" class="screen-intro span-24 column clearfix">
+              <div id="details-hertz"  class="span-6 details column clearfix">               
+                 <h3>Hertz lease</h3>
+                   <p class="work-details">
+                     Xhtml, css,javascript
+                   </p>
+                   <p class="scroll">
+                     <a href="#intro-skier" >Prev</a><a href="#main-wrapper" class="goTop">Top</a><a href="#intro-nce">Next</a>
+                   </p>                    
+              </div><!-- end #details  .span-6 -->   
+             <div id="screen-hertz"  class="span-18 last screen column clearfix">                     
+                 <img src="images/screenshots/hertz/intro.jpg" alt="Hertz Lease" width="710" />             
+              </div><!-- end .Screen --> 
+                 
+         </div><!-- end .Screen-intro --> <div class="clear"></div>
+         
+         
+               
+
+         <div id="intro-nce" class="screen-intro span-24 column clearfix">
+              <div id="details-nce"  class="span-6 details column clearfix">            
+                 <h3>NCE Aquaculture</h3>
+                   <p class="work-details">
+                     Concept, xhtml, css, javascript, CMS integration
+                   </p>
+                   <p class="scroll">
+                     <a href="#intro-hertz" >Prev</a><a href="#main-wrapper" class="goTop">Top</a><a href="#intro-elkonor">Next</a>
+                   </p>                    
+              </div><!-- end #details  .span-6 -->   
+             <div id="screen-nce"  class="span-18 last screen column clearfix">                     
+               <img src="images/screenshots/nce/intro.jpg" alt="NCE Aquaculture"  width="710"/>
+              </div><!-- end .Screen -->                
+          </div><!-- end .Screen-intro --> <div class="clear"></div>   
+
+                   
+         
+
+         <div id="intro-elkonor" class="screen-intro span-24 column clearfix">
+              <div id="details-elkonor"  class="span-6 details column clearfix">            
+                 <h3 id="screenlast">Elkonor</h3>
+                   <p class="work-details">
+                     Photo album, javascript, CMS integration
+                   </p>
+                   <p class="scroll">
+                     <a href="#intro-nce" >Prev</a><a href="#main-wrapper" class="goTop">Top</a><a href="#footer" >Next</a>
+                   </p>                    
+              </div><!-- end #details  .span-6 -->   
+             <div id="screen-elkonor"  class="span-18 last screen screen-last column clearfix">                    
+                  <img src="images/screenshots/elkonor/intro.jpg" alt="Elkonor"  width="710" />
+              </div><!-- end .Screen -->               
+          </div><!-- end .Screen-intro --> <div class="clear"></div>  
+
+          
+          
+                   
+                 
+        </div><!-- end .container  -->
+    </div><!-- end #Intro-wrapper -->         
+          
+  
+
+
+    <div id="footer-wrapper" class="wrapper clearfix">
+        <div class="container">
+            <div id="footer" class="span-24 column clearfix" >
+
+            
+               <div class="span-6 column clearfix box-widget box-cms">
+	                <h3><span>Movabletype:</span></h3>                 
+	                <p>Lorem Ipsum is simply dummy text of the printing and  setting industry. 
+	                Lorem Ipsum is simply  </p>
+               </div><!-- end widget-box --> 
+                   
+               <div class="span-6 column clearfix box-widget box-cms">
+	                <h3><span>Elgg:</span></h3>                 
+	                <p>Lorem Ipsum is simply dummy text of the printing and  setting industry. 
+	                Lorem Ipsum is simply </p>
+               </div><!-- end widget-box -->                    
+                                       
+               
+               <div class="span-6 column clearfix box-widget box-cms">
+	                <h3><span>Drupal:</span></h3>                 
+	                <p>Lorem Ipsum is simply dummy text of the printing and  setting industry. 
+	                Lorem Ipsum is simply </p>
+               </div><!-- end widget-box --> 
+                   
+               <div class="span-6 last column clearfix box-widget box-cms">
+	                <h3><span>Wordpress:</span></h3>                 
+	                <p>Lorem Ipsum is simply dummy text of the printing and  setting industry. 
+	                Lorem Ipsum is simply </p>
+               </div><!-- end widget-box -->    
+               
+               
+                           <div class="clear"></div> 
+                           
+               <div class="span-6 column clearfix box-widget box-cms">
+	                <h3><span>Movabletype:</span></h3>                 
+	                <p>Lorem Ipsum is simply dummy text of the printing and  setting industry. 
+	                Lorem Ipsum is simply  </p>
+               </div><!-- end widget-box --> 
+                   
+               <div class="span-6 column clearfix box-widget box-cms">
+	                <h3><span>Elgg:</span></h3>                 
+	                <p>Lorem Ipsum is simply dummy text of the printing and  setting industry. 
+	                Lorem Ipsum is simply </p>
+               </div><!-- end widget-box -->                    
+                                       
+               
+               <div class="span-6 column clearfix box-widget box-cms">
+	                <h3><span>Drupal:</span></h3>                 
+	                <p>Lorem Ipsum is simply dummy text of the printing and  setting industry. 
+	                Lorem Ipsum is simply </p>
+               </div><!-- end widget-box --> 
+                   
+               <div class="span-6 last column clearfix box-widget box-cms">
+	                <h3><span>Wordpress:</span></h3>                 
+	                <p>Lorem Ipsum is simply dummy text of the printing and  setting industry. 
+	                Lorem Ipsum is simply </p>
+               </div><!-- end widget-box -->                               
+
+                           <div class="clear"></div> 
+                           
+               <div class="span-6 column clearfix box-widget box-cms">
+	                <h3><span>Movabletype:</span></h3>                 
+	                <p>Lorem Ipsum is simply dummy text of the printing and  setting industry. 
+	                Lorem Ipsum is simply  </p>
+               </div><!-- end widget-box --> 
+                   
+               <div class="span-6 column clearfix box-widget box-cms">
+	                <h3><span>Elgg:</span></h3>                 
+	                <p>Lorem Ipsum is simply dummy text of the printing and  setting industry. 
+	                Lorem Ipsum is simply </p>
+               </div><!-- end widget-box -->                    
+                                       
+               
+               <div class="span-6 column clearfix box-widget box-cms">
+	                <h3><span>Drupal:</span></h3>                 
+	                <p>Lorem Ipsum is simply dummy text of the printing and  setting industry. 
+	                Lorem Ipsum is simply </p>
+               </div><!-- end widget-box --> 
+                   
+               <div class="span-6 last column clearfix box-widget box-cms">
+	                <h3><span>Wordpress:</span></h3>                 
+	                <p>Lorem Ipsum is simply dummy text of the printing and  setting industry. 
+	                Lorem Ipsum is simply </p>
+               </div><!-- end widget-box -->                    
+               
+
+               
+
+            </div><!-- end #footer .span-18 -->
+        </div><!-- end .container  -->
+    </div><!-- end #Footer-wrapper -->
+
+
+</div><!-- end #Main-Wrapper -->
+
+</body>
+</html>

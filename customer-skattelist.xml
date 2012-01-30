@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<taconite>
+    <replaceAndFadeIn select="#customer">
+      <h4>Martin Gjesdal 
+       <span>(<a href="http://www.kjernedryss.no/den-vakreste-nettsiden/article174-7.html">Bouvet</a>)</span>:
+      </h4>
+  <p>NeiTilSkattelisten.no er den en av de vakreste nettsidene jeg har sett paa lenge. 
+  Den er ryddig og pen og budskapet er enkelt å forstå... Det er  nok til at jeg
+   kjenner en tåre i øyekroken.</p> 
+  </replaceAndFadeIn>
+</taconite>

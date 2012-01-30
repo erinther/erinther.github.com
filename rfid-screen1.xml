@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<taconite>
+    <replaceAndFadeIn select="#beepad-screens">
+       <img src="images/screenshots/gs1/rfid-kurs.jpg" alt="" width="710"  />
+  </replaceAndFadeIn>
+</taconite>

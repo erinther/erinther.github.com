@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<taconite>
+    <replaceAndFadeIn select="#customer">
+      <h4>Monica <span>(<a href="">Norlandia</a>)</span>:</h4>
+      <p>Jobben med norlandia er bla bla bla</p> 
+  </replaceAndFadeIn>
+</taconite>

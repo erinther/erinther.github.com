@@ -1,219 +1,224 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="generator" content="Movabletype" />
-    <meta name="keywords" content="marginpad,design,oslo,norsk,norge,web design,web development, webutvikler,php5,kohana,css,xhtml,jquery" />
-    <meta name="description" content="Margin pad" />
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
 
-    <title>MarginPad: Web design & development</title>
+	<meta charset="utf-8">
 
-<link rel="stylesheet" href="css/blueprint/screen.css" type="text/css" media="screen, projection" /> 
-<link rel="stylesheet" href="css/blueprint/print.css" type="text/css" media="print" /> 
-<link rel="stylesheet" href="css/style.css" type="text/css" media="screen, projection" /> 
+	<!--[if lte IE 8]>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=IE8">
+	<![endif]-->
+	
+	<title>Eric winther</title>
+	
+	<!--[if lte IE 6]>
+	<script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+	<script src="js/ie6.js"></script>
+	<![endif]-->
+	
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/color-schemes/light.css" rel="stylesheet" id="color-scheme"> <!-- dark.css is also available -->
+	
+	<!--[if IE 7]>
+	<link href="css/ie7.css" rel="stylesheet">
+	<![endif]-->
 
-<!--[if IE]><link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection" /> 
-<![endif]--> 
-<!--[if IE 6]><link rel="stylesheet" href="css/only-ie6.css" type="text/css" media="screen, projection" />
-<![endif]-->
+	<!-- <script src="http://maps.googleapis.com/maps/api/js?key=YOUR-API-KEY&amp;sensor=false"></script> -->
+	<script src="js/jquery-1.7.1.min.js"></script>
+	<script src="js/modernizr.custom.js"></script>
+	<script src="js/jquery.easing.js"></script>
+	<script src="js/jquery.smooth-scroll.min.js"></script>
+	<script src="js/jquery.masonry.min.js"></script>
+	<script src="js/jquery.quicksand.js"></script>
+	<script src="js/jquery.prettyPhoto.modified.js"></script>
+	<script src="js/main.js"></script>	
+	
+</head>
+<body>
 
-<script type="text/javascript" src="js/jquery/jquery-1.3.2.min.js"></script>
-<script type="text/javascript" src="js/jquery/plugins/jquery.taconite.js"></script>
-<script type="text/javascript" src="js/jquery/plugins/stepcarousel.js"></script>
-<script type="text/javascript">
-
-$(document).ready(function() {
-   //Start Image Loading
-   $(".pagination a:not(.seeMore)").click( function() {
-   	var screenURL = $(this).attr("href");
-   	$.get(screenURL);	
-   	return false;
-    });
-    //End Image Loading
-    
-   //Start Extending Taconite
-  $.fn.replaceAndFadeIn = function(newContentElements) {
-    return this.each(function() {
-        $(this).empty().hide().append(newContentElements).fadeIn('fast');
-    });
-};
-
-    //End Extending Taconite   
-});
+	<header id="header">
+	
+		<div id="header-content">
 
 
-		/***
-		stepcarousel.setup({
-			galleryid: 'featured-work', //id of carousel DIV
-			beltclass: 'scrolling', //class of inner "belt" DIV containing all the panel DIVs
-			panelclass: 'box-scroll', //class of panel DIVs each holding content
-			autostep: {enable:true, moveby:1, pause:7000},
-			panelbehavior: {speed:1000, wraparound:true, persist:true},
-			defaultbuttons: {enable: true, moveby: 1, leftnav: ['images/design/arrow_left.png', -9999, 135], rightnav: ['images/design/arrow_right.png', -9999, 135]},
-			contenttype: ['inline'] //content setting ['inline'] or ['external', 'path_to_external_file']
-		})***/
+			<!-- Top Menu -->
 
-		</script>
+			<nav id="nav">
+				<ul>
+					<li><a href="#portfolio">Portfolio</a></li>
+					<li><a href="#contact">Contact</a></li>
+				</ul>
+			
+			</nav>
 
+		</div>
+		
+	</header>
+	
+	<div id="sections">
 
-  </head>
+		<!-- Portfolio Start -->
+		
+		<section id="portfolio" class="section-portfolio">
+			
+			<header class="intro">
+				<hgroup>
+					<h1>Eric winther</h1>
+					<h2>Web Developer</h2>
+				</hgroup>
+				<p>Some of the projects I've been involved.</p>
+				
+			</header>
+			
+			<div class="content">
 
-<body id="home" class="">
-         <div id="only-ie6" class="clearfix">
-           <div class="container">
-              <div  id="explorer6"  class="span-24 column clearfix">         
-		        <p>Why don't you upgrade your Internet explorer?  You know it's 2009! </p>
-		     </div><!-- end #Exploer6 -->
-		   </div><!-- End .container -->
-		 </div><!-- only ie6 -->  
+				<!-- Thumbnail List -->
 
-<div id="main-wrapper" class="wrapper">
-        
+				<ul id="portfolio-list" class="portfolio-thumbs">
+				
+					<li data-categories="ez frontend backend">
+						<a href="projects/nki/index.png">
+							<div class="portfolio-thumb-overlay">
+								<h2>NKI</h2>
+							</div>
+							<img src="projects/nki/thumb.png" alt="NKI">
+						</a>
+					</li>
 
-<!-- Start Header -->
-    <div id ="header-wrapper" class="wrapper clearfix">
-        <div class="container">
-          <div  id="header"  class="span-24 column clearfix">
-            <div id="logo" class="span-18 column ">
-             <a href="index.php">
-               <img src="images/design/logo-simple.jpg" />
-             </a>   
-            </div><!-- end #LOGO .span-18  -->
+					<li data-categories="frontend backend ez">
+						<a href="projects/treider/index.png">
+							<div class="portfolio-thumb-overlay">
+								<h2>Treider Fagskole</h2>
+							</div>
+							<img src="projects/treider/thumb.png" alt="Treider">
+						</a>
+					</li>
 
-                 <div id="main-navigation"  class="span-6 last column clearfix">
-                        <ul id="navigation" class="list-horizontal clearfix">
-                        <li class="home"><a href="index.php">home</a></li>
-                        <li class="work"><a href="work.php">work</a></li>
-                        <li class="service"><a href="service.php">service</a></li>
-                        <li class="contact last"><a href="contact.php">contact</a></li>
-                        </ul>
-                 </div><!-- end #main-nav  .span-NUM -->
-          </div><!-- end .span-24 #header -->
-        </div><!-- end .container -->                                                                      
-    </div><!-- end #header-wrapper -->
-<!-- End Header -->
+					<li data-categories="frontend backend ez">
+						<a href="projects/vital/index.png">
+							<div class="portfolio-thumb-overlay">
+								<h2>Vital</h2>
+							</div>
+							<img src="projects/vital/thumb.png" alt="Vital">
+						</a>
+					</li>
+					<li data-categories="frontend backend wordpress">
+						<a href="projects/encap/index.png">
+							<div class="portfolio-thumb-overlay">
+								<h2>Encap</h2>
+							</div>
+							<img src="projects/encap/thumb.png" alt="Encap">
+						</a>
+					</li>
+					<li data-categories="echo frontend backend">
+						<a href="projects/rfid/index.png">
+							<div class="portfolio-thumb-overlay">
+								<h2>Rfid</h2>
+							</div>
+							<img src="projects/rfid/thumb.png" alt="RFID">
+						</a>
+					</li>
 
+					<li data-categories="echo frontend">
+						<a href="projects/selvaag/index.png">
+							<div class="portfolio-thumb-overlay">
+								<h2>Selvaag</h2>
+							</div>
+							<img src="projects/selvaag/thumb.png" alt="Selvaag">
+						</a>
+					</li>
+				
+				
+					<li data-categories="echo frontend backend">
+						<a href="projects/hertz/index.png">
+							<div class="portfolio-thumb-overlay">
+								<h2>Hertz</h2>
+							</div>
+							<img src="projects/hertz/thumb.png" alt="">
+						</a>
+					</li>
 
-<div id ="featured-wrapper" class="wrapper clearfix">
-        <div class="container ">
-                  <div id="featured"  class="column clearfix ">
+					<li data-categories="echo frontend backend">
+						<a href="projects/nce/index.png">
+							<div class="portfolio-thumb-overlay">
+								<h2>NCE</h2>
+							</div>
+							<img src="projects/nce/thumb.png" alt="">
+						</a>
+					</li>
 
-                    <div id="featured-work"  class="span-17 column clearfix">
-                        <div id="featured-work-inner"  class=" column">
-                        
-                         
-                           <img src="images/screenshots/screen.jpg" alt="screenshots s01"  />
-                         						 
-						  
-						  						  
-                          </div><!-- end #Featured-Work-inner   -->
-                     </div><!-- end #Featured-Work  .span-NUM -->     
-                                     
-                   <div id="featured-customer"  class="span-6 prepend-1 last column clearfix">
-                   <h3>about me</h3>
-                     <div id="customer" class="quote">
-                     <p>Hello, my name is Eric Winther and this is my portfolio. I am a web developer and designer based in Oslo, Norway.I create clean and accessible websites using the latest technologies that conform to current web standards. </p>
-					  </div><!-- end #Customer -->
-	               <!--  <div class="pagination clearfix column">
-	                    <a href="customer-skattelist.xml" id="cust-skatt">1</a>
-	                    <a href="customer-norlandia.xml" id="cust-norlandia">2</a>
-	                    <a href="work.html" id="project-3">3</a>
-	                    <a href="work.html" id="project-4">4</a>	
-	                    <a href="work.html" class="seeMore">more&rsaquo;&rsaquo;</a>	                
-	                </div> -->
-                 </div><!-- end #Featured-customer  .span-6-->
-                                   
-                                 
-                  </div><!-- end #featured   -->
-        </div><!-- end .container -->   
-    </div><!-- end #Featured-wrapper -->                  
-                  
+				<!-- 
+					<li data-categories="movabletype frontend backend">
+						<a href="projects/beepad/index.png">
+							<div class="portfolio-thumb-overlay">
+								<h2>Beepad</h2>
+							</div>
+							<img src="projects/beepad/thumb.png" alt="">
+						</a>
+					</li>
+				-->
+				</ul>
+				<div class="clear"></div>
 
-                        <div class="clear"></div>
-
-
-    
-
-
-    <div id ="content-wrapper" class="wrapper clearfix">
-        <div class="container ">
-             <div id="content-container"  class="span-24  column clearfix showgrid ">
-
-                 <div id="content"  class="column clearfix">
-                  
-                   <div id="web-design"  class="span-10 append-2 web-text column clearfix">
-                   <h3>Web design</h3>                 
-	                <p class=""> Solid working knowledge with XHTML/CSS Web 2.0 standards compliant design ; clean layouts and user
-	                 interfaces and script platforms such as JS, JQuery, and Ajax. </p>
-                 </div><!-- end #web-development  .span-NUM -->
-                 
-                 
-                  <div id="web-development"  class="span-10 prepend-2 web-text last column clearfix">
-                   <h3>Web development</h3>                 
-	                 <p class=""> Development in LAMP (with php & perl) using frameworks like zend and kohana. Creating user-driven content applications based on Movabletype, Elgg and Drupal </p> 
-                 </div><!-- end #sub-content  .span-NUM -->
-                    
-                      <div class="clear"></div>
-                   
+				<div id="portfolio-controls">
+				
+					<ul id="portfolio-filters" class="box">
+						<li><a href="#" class="portfolio-filter-selected">All</a></li>
+						<li><a href="#" data-category="ez">eZ publish</a></li>
+						<li><a href="#" data-category="wordpress">Wordpress</a></li>
+						<!-- <li><a href="#" data-category="movabletype">Movabletype</a></li>-->
+						<li><a href="#" data-category="frontend">Frontend</a></li>
+						<li><a href="#" data-category="backend">Backend</a></li>
+					</ul>
 					
-                  </div><!-- end #content  .span-NUM -->
+					<div id="portfolio-page-numbers">
+						<span id="portfolio-page-current">1</span> / <span id="portfolio-page-total">1</span>
+					</div>
+					
+					<div id="portfolio-page-buttons">
+						<a href="#" id="portfolio-page-prev">Prev</a>
+						<a href="#" id="portfolio-page-next">Next</a>
+					</div>
+				</div>
+			
+			</div>
+		
+		</section>
+		
+		<!-- Portfolio End -->
+				
+		<!-- Contact Start -->
+		
+		<section id="contact" class="section-contact">
+	
+			<header>
+				<h1>Contact</h1>			
+			</header>
 
-  
+			<ul class="social-media">
+				<li><a href="http://twitter.com/erinther" class="icon-twitter">Twitter</a></li>
+				<li><a href="http://facebook.com/erinther" class="icon-facebook">Facebook</a></li>
+				<li><a href="https://plus.google.com/u/0/105897049584172097126" class="icon-google-plus">Google+</a></li>
+				<li><a href="http://no.linkedin.com/in/erinther" class="icon-linkedin">LinkedIn</a></li>
+			</ul>
+		
+			<div class="content">
+				<div id="contact-info">
+					<div class="box">
+						<p>
+							Eric Winther<br>
+							<a href='m&#97;i&#108;to&#58;er&#37;6&#57;nther&#37;40%6&#55;mail&#46;com'>e&#114;i&#110;the&#114;&#64;&#103;mail&#46;&#99;o&#109;</a><br>
+							(47) 41 30 20 84
+						</p>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</section>
+		<!-- Contact End -->
 
-            </div><!-- end #content-container  .span-24 -->
+	</div>
 
-        </div><!-- end .container -->   
-    </div><!-- end #content-wrapper -->
-
-
-
-    <div id="extra-wrapper" class="wrapper clearfix">
-        <div class="container">
-            <div id="extra" class="span-24 column clearfix" >
-            
-            
-               <div class="span-8 column clearfix box-widget box-cms">
-                    <img src="images/cms/logo/logo-mtscreen.png"  alt="movabletype" width="310" height="103" /> 
-	                 <h3><span>Movabletype</span></h3>                
-	                <p><blockquote>Powerful enough for building blogs, websites or social networks on a single platform</blockquote> </p>
-               </div><!-- end widget-box --> 
-               
-               <div class="span-8 column clearfix box-widget box-cms">
-                    <img src="images/cms/logo/logo-elggscreen.png"  alt="Elgg" width="310" height="103" /> 
-	                <h3><span>Elgg</span></h3>                 
-	                <p><blockquote>Empowers individuals, groups and institutions to create their own fully-featured social network.</blockquote> </p>
-               </div><!-- end widget-box -->                    
-               
-               
-                <div class="span-8  last column clearfix box-widget box-cms">
-                    <img src="images/cms/logo/logo-drupalscreen.png"  alt="Drupal" width="310" height="103" /> 
-	                 <h3><span>Drupal</span></h3>                
-	                <p><blockquote>Supports a variety of websites ranging from personal weblogs to large community websites </blockquote></p>
-               </div><!-- end widget-box -->               
-                   
-               
-                                       
-               
-
-                    
-                                      
-
-            </div><!-- end #Extra .span-24 -->
-        </div><!-- end .container  -->
-    </div><!-- end #Extra-wrapper -->
-    
-<!-- Start Footer -->
-    <div id="footer-wrapper" class="wrapper clearfix">
-        <div class="container">
-            <div id="footer" class="span-24 column clearfix" >
-              marginpad.no | 2007-2009
-            </div><!-- end #footer .span-24 -->
-        </div><!-- end .container  -->
-    </div><!-- end #Footer-wrapper -->   
-<!-- End Footer -->
-
-
-</div><!-- end #Main-Wrapper -->
-
+	<!-- <footer id="footer"></footer> -->
+	
 </body>
 </html>

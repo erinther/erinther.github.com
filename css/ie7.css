@@ -1,0 +1,16 @@
+
+/* this is loaded only for Internet Explorer 7 in order to smooth a few things over */
+
+/* margin-right: -19px; won't work in IE7 without this */
+
+.portfolio-thumbs
+{
+	zoom: 1;
+}
+
+/* compensate for .portfolio-thumbs li margin-bottom which does not render on last row in IE 7 */
+
+#portfolio-controls
+{
+	margin-top: 19px;
+}

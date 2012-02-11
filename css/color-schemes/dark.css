@@ -1,0 +1,351 @@
+
+/* Dark Stylesheet */
+
+/**********************************************
+ * BASE STYLES
+ **********************************************/
+
+/* Background Image / Color */
+ 
+body,
+#loading-screen
+{
+	background-color: #1d1d1d; /*shows while image is loading */
+	background-image: url(../../img/color-schemes/dark/bg.jpg);
+}
+
+/* Text Color */
+
+body
+{
+	color: #aaa;
+}
+
+	/* Slight shadow */
+
+	.content
+	{
+		text-shadow: 1px 1px 0 #111;
+	}
+	
+	/* Don't let shadows carry into map text */
+	
+	#map-container
+	{
+		text-shadow: none;
+	}
+
+/* Link Color */
+
+a
+{
+	color: #fff;
+}
+
+/* Content Headings */
+
+h1, h2, h3, h4, h5, h6
+{
+	color: #e5e5e5;
+}
+
+/* Form Fields */
+
+input[type=text],
+input[type=email],
+input[type=url],
+input[type=search],
+input[type=number],
+input[type=date],
+input[type=month],
+input[type=week],
+input[type=time],
+input[type=datetime],
+input[type=datetime-local],
+textarea,
+select
+{
+	border-color: #292929;
+	border-top-color: #0d0d0d;
+	border-left-color: #0d0d0d;
+	background: #191919;
+	color: #aaa;	
+}
+
+/**********************************************
+ * CONTENT ELEMENTS
+ **********************************************/
+
+/* Loading Indicator (while background image loads) */
+ 
+#loading-indicator, /* initial page load */
+.pp_loaderIcon /* lightbox */
+{
+	background-image: url(../../img/color-schemes/dark/loading.gif);
+}
+ 
+/* Image Frames */
+
+.portfolio-thumbs li,
+.service-image,
+#about-portrait,
+#map-container
+{
+
+	background: #3d3d3d; /* thick border */
+	border-color: #1a1a1a; /* add definition with thin outside border */
+	
+	/* Shadow */
+	-moz-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.40);
+	-webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.40);
+	box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.40);
+	
+}
+
+/* Transparent Box */
+
+.box
+{
+
+	background-image: url(../../img/color-schemes/dark/box-bg.png);
+	border-color: #313131; /* highlight on inner box */
+
+	/* Shadow */
+	-moz-box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.30);
+	-webkit-box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.30);
+	box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.30);
+	
+}
+	
+	/* Bevel text in boxes */
+	
+	.content .box
+	{
+		text-shadow: -1px -1px 0 #111;
+	}
+
+/* Link Buttons */
+
+a.button
+{
+
+	color: #222;
+	background-color: #eee;
+	background-image: url(../../img/color-schemes/dark/button-overlay.png);
+	border-color: #fff;
+	border-right-color: #bbb;
+	border-bottom-color: #bbb;
+	text-shadow: 1px 1px 0 #ddd;
+	
+	/* Shadow */
+	-moz-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+	-webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+	
+}
+
+	a.button:hover
+	{
+		color: #000;
+	}
+
+/**********************************************
+ * HEADER
+ **********************************************/
+
+/* Header Bar */
+ 
+#header
+{
+	background-image: url(../../img/color-schemes/dark/header-bg.png);
+}
+
+	/* Logo */
+	
+	#header-content
+	{
+		background-image: url(../../img/color-schemes/dark/logo.png);
+	}	
+
+	/* Navigation Links */
+	
+	#nav a
+	{		
+		color: #d5d5d5;
+	}
+	
+	#nav a:hover
+	{
+		color: #fff;
+	}
+ 
+/**********************************************
+ * SECTIONS
+ **********************************************/
+
+/* Section Headings */
+
+#sections > section header h1,
+#sections > section header h2
+{
+	text-shadow: 8px 10px 0px rgba(200, 200, 200, 0.12);
+}
+	
+	/* Primary Heading */
+
+	#sections > section header h1
+	{
+		color: #f8f8f8;
+	}
+
+	/* Secondary Heading (Intro w/Dual Headings) */
+	
+	#sections > section header.intro h2
+	{
+		color: #b5b5b5;
+	}
+
+/* Content Intro */
+
+.intro
+{
+	color: #ddd;
+}
+	
+/**********************************************
+ * PORTFOLIO
+ **********************************************/
+
+/* Thumbnail Overlay (Hover) */
+
+.portfolio-thumb-overlay
+{
+	background-image: url(../../img/color-schemes/dark/thumb-overlay.png);
+}
+
+	/* Overlay Title Text */
+
+	.portfolio-thumb-overlay h2
+	{
+		color: #f1f1f1;
+		text-shadow: 1px 1px 0px #333;
+	}
+	
+/* Category Filter Links */
+
+#portfolio-filters a
+{
+	color: #c5c5c5;
+	text-shadow: -1px -1px 0 #111;
+}
+
+	/* Hover */
+	
+	#portfolio-filters a:hover
+	{
+		color: #eee; /* darker on hover */
+		text-shadow: 1px 1px 0 #222;
+	}
+	
+	/* Selected */
+	
+	#portfolio-filters a.portfolio-filter-selected
+	{
+		background: #999;
+		color: #000;
+		text-shadow: 1px 1px 0px #aaa;
+	}
+	
+/* Button Sprites (Prev, Next, etc.) */
+
+#portfolio-page-prev,
+#portfolio-page-next,
+.pp_arrow_previous,
+.pp_arrow_next,
+.pp_close,
+.pp_expand,
+.pp_contract
+{
+	background-image: url(../../img/color-schemes/dark/button-sprites.png);
+}
+
+	.pp_next:hover 
+	{
+		background-image: url(../../img/color-schemes/dark/lightbox-hover-next.png);
+	}
+
+	.pp_previous:hover
+	{
+		background-image: url(../../img/color-schemes/dark/lightbox-hover-prev.png);
+	}
+	
+/* Lightbox Border / Background */
+
+.pp_content
+{
+	background: #353535; /* fallback for non rgba browser (IE7/8) */
+	background: rgba(200, 200, 200, 0.1); /* edit the value above to match */
+}
+
+	/* Lightbox border for browsers not supporting box-shadow (IE7/8) */
+ 
+ 	.no-boxshadow .pp_content
+	{
+		border: 1px solid #1a1a1a;
+	}
+	
+/* Lightbox Title */
+.ppt
+{
+	color: #f8f8f8;
+}
+	
+/**********************************************
+ * ABOUT
+ **********************************************/
+
+/* Skills & Experience Lists - Custom Icon */
+
+#about-skills li,
+#about-experience li
+{
+	background-image: url(../../img/color-schemes/dark/check-icon.png);
+}
+
+/**********************************************
+ * TESTIMONIALS
+ **********************************************/
+
+/* Name */
+
+.testimonial-name b
+{
+	color: #eee;
+}
+
+/**********************************************
+ * CONTACT
+ **********************************************/
+ 
+/* Social Media Icons */
+ 
+.icon-twitter,
+.icon-facebook,
+.icon-google-plus,
+.icon-dribbble,
+.icon-forrst,
+.icon-flickr,
+.icon-youtube,
+.icon-vimeo,
+.icon-skype,
+.icon-linkedin
+{
+	background-image: url(../../img/color-schemes/dark/social-media-sprites.png);
+}
+
+/* Contact Form Error List - Custom Icon */
+
+#contact-error li
+{
+	background-image: url(../../img/color-schemes/dark/bullet-icon.png);
+}

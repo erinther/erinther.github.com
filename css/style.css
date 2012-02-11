@@ -1,117 +1,1304 @@
-/*===============General=========================*/
-/*===============================================*/
-/*===============================================*/
-body{outline:none}
-a{text-decoration:none;outline:none}
-ul.list-horizontal,ul.list-vertical{margin:0;padding:0;list-style-type:none;}
-ul.list-horizontal,ul.list-horizontal li, ul.list-horizontal li a{float:left;display:inline;}
-h1,h1 a,h2,h2 a,h3,h3 a,h4,h4 a,h5,h5 a, h6,h6 a{color:#fafafa;font-family:OfficinaSansITCStd;}
-#only-ie6{display:none;}
-blockquote {color:#636568;}
+
+/**********************************************
+ * TABLE OF CONTENTS
+ **********************************************/
+
+/*
+ 
+1. COLOR NOTE
+2. BASE STYLES (Reset, Fonts, Links, etc.)
+3. CONTENT ELEMENTS (Image Frames, Boxes, Buttons)
+4. HEADER (Logo, Navigation)
+5. FOOTER (Copyright Notice)
+6. SECTIONS
+7. PORTFOLIO THUMBNAILS
+8. PORTFOLIO LIGHTBOX (prettyPhoto)
+9. ABOUT
+10. SERVICES
+11. TESTIMONIALS
+12. CONTACT
+13. DEMO (Color Switcher)
+
+*/
+
+/**********************************************
+ * 1. COLOR NOTE
+ **********************************************/
+
+/*
+
+See light.css and dark.css.
+Edit <head> section of index.html file to use the style you prefer.
+
+*/
+
+/**********************************************
+ * 2. BASE STYLES (Reset, Fonts, Links, etc.)
+ **********************************************/
+
+/* html5doctor.com Reset v1.6.1 by Richard Clark (http://richclarkdesign.com) */
+
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;margin:0;padding:0;}
+body{line-height:1;}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}
+nav ul{list-style:none;}
+blockquote,q{quotes:none;}
+blockquote:before,blockquote:after,q:before,q:after{content:none;}
+a{font-size:100%;vertical-align:baseline;background:transparent;margin:0;padding:0;}
+ins{background-color:#ff9;color:#000;text-decoration:none;}
+mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold;}
+del{text-decoration:line-through;}
+abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help;}
+table{border-collapse:collapse;border-spacing:0;}
+hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0;}
+input,select{vertical-align:middle;}
+
+/* Additional Reset */
+
+img
+{
+	vertical-align: bottom; /* remove gap from below <img> tags */
+}
+
+/**
+ * Body Font
+ */
+
+body,
+input, textarea, select
+{
+	font-family: Georgia, 'Bitstream Vera Serif', 'Times New Roman', Times, serif;
+	font-size: 17px;
+	line-height: 1.6em;
+}
+
+body
+{
+	-webkit-text-size-adjust: 100%; /* prevent inconsistent font sizes in mobile Safari */
+}
+
+/**
+ * Heading and Button Font
+ * "Lato" by Lukasz Dziedzic
+ * SIL Open Font License (http://www.fontsquirrel.com/license/lato)
+ * Font kit from FontSquirrel (http://www.fontsquirrel.com/fonts/lato)
+ */
+
+@font-face {
+    font-family: 'LatoBlack';
+    src: url('../fonts/lato/Lato-Black-webfont.eot');
+    src: url('../fonts/lato/Lato-Black-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/lato/Lato-Black-webfont.woff') format('woff'),
+         url('../fonts/lato/Lato-Black-webfont.ttf') format('truetype'),
+         url('../fonts/lato/Lato-Black-webfont.svg#LatoBlack') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Links */
+
+a
+{
+	text-decoration: none;
+}
+
+/* Headings */
+
+h1, h2, h3, h4, h5, h6,
+.ppt /* lightbox title */
+{
+	font-family: LatoBlack, Arial, Helvetica, sans-serif;
+	text-transform: uppercase;
+}
+
+h1
+{
+	font-size: 25px;
+}
+
+h2,
+.ppt /* lightbox title */
+{
+	font-size: 22px;
+}
+
+h3
+{
+	font-size: 19px;
+}
+
+h4
+{
+	font-size: 17px;
+}
+
+h5
+{
+	font-size: 15px;
+}
+
+h6
+{
+	font-size: 13px;
+}
+
+/* Paragraph */
+
+p,
+h1, h2, h3, h4, h5, h6,
+ul, ol,
+.p /* manual application */
+{
+	margin: 24px 0;
+}
+
+/* Lists */
+
+ul, ol
+{
+	padding-left: 20px;
+}
+
+/* Blockquote */
+
+blockquote
+{
+	margin-left: 30px;
+	font-style: italic;
+}
+
+/* Form Fields */
+
+input[type=text],
+input[type=email],
+input[type=url],
+input[type=search],
+input[type=number],
+input[type=date],
+input[type=month],
+input[type=week],
+input[type=time],
+input[type=datetime],
+input[type=datetime-local],
+textarea,
+select
+{
+
+	padding: 5px 7px;
+	margin: 0;
+	border: 1px;
+	border-style: solid;
+	font-size: 0.9em;
+	
+	/* Rounded Corners */
+	-moz-border-radius: 3px; /* FF */
+	-webkit-border-radius: 3px; /* Safari, Chrome */
+	border-radius: 3px; /* modern browsers */
+	
+}
+
+input[type=radio],
+input[type=checkbox]
+{
+	margin-bottom: 7px;
+}
+
+/* Font Weight */
+
+.bold
+{
+	font-weight: bold;
+}
+
+.nonbold
+{
+	font-weight: 400;
+}
+
+/* Clear */
+
+.clear
+{
+	clear: both;
+	visibility: hidden;
+}
+
+/* Hidden */
+
+.hidden
+{
+	display: none;
+}
+
+/* Hidden but active element, such as a hidden submit */
+
+.invisible
+{
+	width: 1px;
+	height: 1px;
+	visibility: hidden;
+	left: 30000px;
+}
+
+/**********************************************
+ * 3. CONTENT ELEMENTS (Image Frames, Boxes, Buttons)
+ **********************************************/
+ 
+/* Loading Indicator */
+
+#loading-screen
+{
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+}
+
+	#loading-indicator
+	{
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		margin-top: -16px; /* half of width */
+		margin-left: -16px;
+		width: 32px;
+		height: 32px;
+		background-repeat: no-repeat;
+		z-index: 99999;
+	}
+
+/* Image Frames */
+
+.portfolio-thumbs li,
+.service-image,
+#about-portrait,
+#map-container
+{
+	
+	/* Border Width */
+	padding: 5px;
+
+	/* Shadow */
+	-moz-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.20);
+	-webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.20);
+	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.20);
+		
+	/* Rounded Corners */
+	border-top-width: 1px;
+	border-left-width: 1px;
+	border-style: solid;
+	-moz-border-radius: 3px; /* FF */
+	-webkit-border-radius: 3px; /* Safari, Chrome */
+	border-radius: 3px; /* modern browsers */
+		
+}
+
+	/* Add 4-sided border for browsers not supporting box-shadow (IE7/8) */
+
+	.no-boxshadow .portfolio-thumbs li,
+	.no-boxshadow .service-image,
+	.no-boxshadow #about-portrait,
+	.no-boxshadow #map-container
+	{
+		border-bottom-width: 1px;
+		border-right-width: 1px;
+	}
+	
+	/* Rounded Corners for images inside frames */
+
+	.portfolio-thumbs img,
+	.portfolio-thumb-overlay,
+	#about-portrait img,
+	.service-image img
+	{
+		border: 0px;
+		-moz-border-radius: 2px; /* FF */
+		-webkit-border-radius: 2px; /* Safari, Chrome */
+		border-radius: 2px; /* modern browsers */
+	}
+
+/* Transparent Box */
+
+.box
+{
+
+	padding: 22px;
+	
+	/* Rounded Corners */
+	border-width: 1px;
+	border-style: solid;
+	-moz-border-radius: 3px; /* FF */
+	-webkit-border-radius: 3px; /* Safari, Chrome */
+	border-radius: 3px; /* modern browsers */
+	
+	/* Shadow */
+	-moz-box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.15);
+	-webkit-box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.15);
+	box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.15);
+
+}
+
+	/* Text Margin Adjustments */
+	
+	.box p
+	{
+		margin: 18px 0 0 0;
+	}
+	
+	.box p:first-child
+	{
+		margin-top: 0;
+	}
+
+/* Link Buttons */
+ 
+a.button
+{
+
+	display: inline-block;
+	padding: 3px 16px;
+	min-width: 90px;
+	white-space: nowrap;
+	font-family: LatoBlack, Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	text-transform: uppercase;
+	text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.6);
+	text-align: center;
+	
+	/* Rounded Corners */
+	border-width: 1px;
+	border-style: solid;
+	-moz-border-radius: 2px; /* FF */
+	-webkit-border-radius: 2px; /* Safari, Chrome */
+	border-radius: 2px; /* modern browsers */
+	
+	/* Shadow */
+	-moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+	
+}
+	
+	/* Despress on Click */
+	
+	a.button:active
+	{
+
+		position: relative;
+		top: 1px;
+		left: 1px;
+		
+		/* Lesser Shadow */
+		-moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+		-webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+		box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+
+	}
+ 
+/**********************************************
+ * 4. HEADER (Logo, Navigation)
+ **********************************************/
+
+/* Header Bar */
+
+#header
+{
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 98px; /* 18px bigger than #header-content height to allow for background's shadow */
+	z-index: 100; /* above content */
+	background-position: bottom;
+}
+
+	/* Hide header initially for page load effect (if JS is enabled) */
+	
+	.js #header
+	{
+		visibility: hidden;
+	}
+
+	/* Center Logo / Navigation */
+
+	#header-content
+	{
+		width: 940px;
+		height: 80px; /* same as #header-content line-height below */
+		margin: 0px auto;
+		background-repeat: no-repeat;
+		background-position: left center; /* center logo vertically (method used to accommodate IE7) */
+		/* background-image for logo is specified in light/dark.css */
+	}
+ 
+		/* Navigation */
+
+		#nav
+		{
+			float: right;
+			position: relative;
+			line-height: 80px; /* same as #header-content height above */
+		}
+		
+			#nav ul
+			{
+				margin: 0;
+				padding: 0;
+			}
+
+				/* Links */
+			
+				#nav li
+				{
+					float: left;
+					margin-left: 20px;
+					font-style: italic;
+					font-size: 18px;
+					letter-spacing: 0px;
+				}
+				
+					#nav li:first-child
+					{
+						margin-left: 0;
+					}
+
+					#nav a
+					{
+						line-height: 22px;
+					}
+					
+/**********************************************
+ * 5. FOOTER (Copyright Notice)
+ **********************************************/
+ 
+#footer
+{
+	padding: 36px 0;
+	text-align: center;
+}
+
+	/* Hide footer initially for page load effect (if JS is enabled) */
+	
+	.js #footer
+	{
+		visibility: hidden;
+	}
+
+/**********************************************
+ * 6. SECTIONS
+ **********************************************/
+
+/* Sections Container */
+		
+#sections
+{
+	width: 940px;
+	margin: 0 auto;
+}
+	 
+	 /* Single Section */
+	 
+	 #sections > section
+	 {
+		clear: both;
+		margin-bottom: 700px; /* space between sections to push next off screen */
+		padding-top: 125px; /* allow space for fixed nav bar */
+		position: relative;
+	 }
+	 
+		/* Hide sections initially for page load effect (if JS is enabled) */
+		
+		.js #sections > section
+		{
+			visibility: hidden;
+		}
+	 
+		/* Section Header */
+		
+		#sections > section header
+		{
+			position: relative;
+		}
+		 
+			/* Section Headings */
+			
+			#sections > section header h1,
+			#sections > section header h2
+			{
+				position: relative;
+				margin: 0;
+				line-height: 1.2em;
+				letter-spacing: -1px;
+				display: inline;
+			}
+				
+				/* Primary Heading */
+
+				#sections > section header h1
+				{
+					font-family: LatoBlack, Arial, Helvetica, sans-serif;
+					font-size: 50px;
+					text-transform: uppercase;
+				}
+
+				/* Introduction with Dual Headings  */
+
+				#sections > section header.intro
+				{
+					text-align: center;
+				}
+
+					/* Side-by-side Headings */
+					
+					#sections > section header.intro h1,
+					#sections > section header.intro h2
+					{
+						display: inline;
+					}			
+						
+						/* Primary Heading (Dual Headings) */
+						
+						#sections > section header.intro h1
+						{
+							font-size: 50px;
+						}
+						
+						/* Secondary Heading (Dual Headings) */
+						
+						#sections > section header.intro h2
+						{							
+							margin-left: 20px;
+							font-family: Georgia, 'Bitstream Vera Serif', 'Times New Roman', Times, serif;
+							font-weight: 400;
+							font-size: 52px;
+							letter-spacing: -2px;
+							font-style: italic;
+							text-transform: none;
+						}
+						
+					/* Intro Line / Paragraph Beneath Headings */
+				
+					#sections > section header.intro p
+					{
+						margin-top: 18px;
+						font-size: 22px;
+						line-height: 1.6em;
+					}
+
+		/* Section Content */
+			
+		.content
+		{
+			position: relative;
+		}
+		
+			/* Larger Intro */
+		
+			p.intro
+			{
+				margin-top: 22px;
+				font-size: 26px;
+				font-style: italic;
+				line-height: 1.4em;
+			}
+			
+/**********************************************
+ * 7. PORTFOLIO THUMBNAILS
+ **********************************************/
+
+/* Thumbnail List */
+
+.portfolio-thumbs /* <ul> */
+{
+	margin-top: 28px;
+	margin-bottom: 0;
+	margin-right: -20px; /* negative of .portfolio-thumbs li + a bit more for border/shadow insurance*/
+	padding: 0;
+	clear: both;
+	overflow: hidden; /* solves spacing glitch above portfolio in Opera */
+	z-index: 50; /* higher than controls */
+	position: relative; /* z-index doesn't work without this */
+}
+
+	/* Thumbnail Container */
+	/* Rounded corners and shadows are applied via "Image Frames" above */
+
+	.portfolio-thumbs li
+	{
+		list-style: none;
+		float: left;
+		margin-right: 19px; /* negative of .portfolio-thumbs li, also adjust .no-boxshadow .portfolio-thumbs li */
+		margin-bottom: 19px;		
+	}
+
+		/* Make space for 4-sided border for browsers not supporting box-shadow (IE7/8) */
+	
+		.no-boxshadow .portfolio-thumbs li
+		{
+			margin-right: 18px; /* same as .portfolio-thumbs li but minus 1px for space for border on right side */
+		}
+
+		/*  Remove Rounded Corners (before Quicksand filter effect for major performance increase) */
+		
+		.portfolio-thumbs li.portfolio-square-corners /* applied w/jQuery */
+		{
+			-moz-border-radius: 0px; /* FF */
+			-webkit-border-radius: 0px; /* Safari, Chrome */
+			border-radius: 0px; /* modern browsers */
+		}	
+		
+		/* Image & Overlay Rounded Corners */
+	
+		.portfolio-thumbs img,
+		.portfolio-thumb-overlay
+		{
+			width: 210px;
+			height: 140px;
+		}
+	
+		/* Title Overlay (jQuery Fade In on Hover) */
+	
+		.portfolio-thumb-overlay
+		{
+			display: table;
+			position: absolute;
+			cursor: pointer; /* helps IE7 */
+		}
+		
+			.portfolio-thumb-overlay h2
+			{
+				display: table-cell; /* to assist w/vertical centering */
+				vertical-align: middle;				
+				padding: 10px;
+				font-family: Georgia, 'Bitstream Vera Serif', 'Times New Roman', Times, serif;
+				font-size: 18px;
+				font-style: italic;
+				font-weight: normal;
+				line-height: 21px;
+				text-transform: none;
+				text-align: center;
+			}
+			
+		/* Hide Description Container */
+		
+		.portfolio-description
+		{
+			display: none;
+		}
+
+/* Category Filters & Pagination */
+
+#portfolio-controls
+{
+	position: relative;
+	clear: both;
+	margin-top: 4px;
+}
+
+	/* Hide Controls if JS Off */
+	
+	.no-js #portfolio-controls
+	{
+		display: none;	
+	}
+	
+	/* Category Filter Controls */
+	
+	#portfolio-filters /* <ul> */
+	{
+		display: inline-block; /* shrink box to fit */
+		margin: 0 150px 0 1px; /* guarantee room for page controls, especially browsers not supporting inline-block */
+		padding: 4px;
+	}
+		
+		#portfolio-filters li
+		{
+			list-style: none;
+			display: inline;
+			margin-left: 5px;
+			font-family: LatoBlack, Arial, Helvetica, sans-serif;
+			font-size: 14px;
+			text-transform: uppercase;
+		}
+		
+			#portfolio-filters li:first-child
+			{
+				margin-left: 0;
+			}
+		
+			#portfolio-filters a
+			{
+
+				padding: 5px 10px;
+				border: 0px;
+				
+				/* Rounded Corners for selected item */
+				-moz-border-radius: 2px; /* FF */
+				-webkit-border-radius: 2px; /* Safari, Chrome */
+				border-radius: 2px; /* modern browsers */
+				
+			}	
+	
+	/* Page Numbers */
+
+	#portfolio-page-numbers
+	{
+		display: none; /* jQuery shows if more than 1 page */
+		position: absolute;
+		top: 2px;
+		right: 90px;
+		font-size: 15px;
+	}
+	
+	/* Page Buttons (CSS Sprites) */
+	
+	#portfolio-page-buttons
+	{
+		position: absolute;
+		top: -2px;
+		right: -7px;
+		display: none; /* jQuery shows if more than 1 page */
+	}
+
+		#portfolio-page-prev,
+		#portfolio-page-next
+		{
+			display: block;
+			float: left;
+			width: 39px;
+			height: 39px;
+			background-repeat: no-repeat;
+			text-indent: -10000px;
+		}
+
+		#portfolio-page-prev
+		{
+			background-position: 0 0;
+		}
+		
+			#portfolio-page-prev:hover
+			{
+				background-position: 0 -39px;
+			}
+			
+			#portfolio-page-prev:active
+			{
+				background-position: 0 -78px;
+			}
+			
+			#portfolio-page-prev.page-button-disabled
+			{
+				background-position: 0 -117px;
+				cursor: default;
+			}
+		
+		#portfolio-page-next
+		{
+			background-position: -39px 0;
+		}
+		
+			#portfolio-page-next:hover
+			{
+				background-position: -39px -39px;
+			}
+			
+			#portfolio-page-next:active
+			{
+				background-position: -39px -78px;
+			}
+			
+			#portfolio-page-next.page-button-disabled
+			{
+				background-position: -39px -117px;
+				cursor: default;
+			}
+
+/**********************************************
+ * 8. PORTFOLIO LIGHTBOX (prettyPhoto)
+ **********************************************/
+
+/* Background Overlay */
+ 
+.pp_overlay /* note: this is 100% transparent in prettyPhoto config so that <body> background shows */
+{
+	display: none;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 9500;
+}
+
+/* Loading Indicator */
+
+.pp_loaderIcon
+{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	display: block;
+	height: 32px;
+	width: 32px;
+	margin: -16px 0 0 -16px;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+/* Container Elements */
+
+.pp_pic_holder
+{
+	display: none;
+	position: absolute;
+	width: 100px;
+	z-index: 10000;
+}
+
+	.pp_pic_holder a:focus
+	{
+		outline: none;
+	}
+	
+	.pp_content_container
+	{
+		position: relative;
+		text-align: left;
+		width: 100%;
+	}
+		
+		/* Image/Video Frame */
+		
+		.pp_content
+		{
+		
+			height: 40px;
+			min-width: 40px;
+			padding: 5px; /* border width */		
+			border: 0px; /* prepare for rounded corners */
+
+			/* Shadow */
+			-moz-box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.10);
+			-webkit-box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.10);
+			box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.10);
+			
+		}
+
+			/* Rounded corners are removed before transition and applied after because performance is hindered while rounded corners are present */
+		
+			.pp_content.rounded_corners
+			{
+				-moz-border-radius: 3px; /* FF */
+				-webkit-border-radius: 3px; /* Safari, Chrome */
+				border-radius: 3px; /* modern browsers */
+			}
+		
+		* html .pp_content
+		{
+			width: 40px;
+		}
+		
+			.pp_fade
+			{
+				display: none;
+			}
+			
+				.pp_hoverContainer
+				{
+					position: absolute;
+					top: 0;
+					width: 100%;
+					z-index: 2000;
+				}
+
+/* Image/Video */
+
+#pp_full_res
+{
+	line-height: 1 !important;
+}
+
+	/* Rounded Corners (Images) */
+	
+	#pp_full_res img
+	{
+		-moz-border-radius: 2px; /* FF */
+		-webkit-border-radius: 2px; /* Safari, Chrome */
+		border-radius: 2px; /* modern browsers */
+	}
+	
+/* Hover Controls (Over Image) */
+
+.pp_next,
+.pp_previous
+{
+	display: block;
+	height: 100%;
+	text-indent: -10000px;
+	width: 49%;
+}
+
+	.pp_next
+	{
+		float: right;
+	}
+	
+		.pp_next:hover
+		{
+			background-position: center right;
+			background-repeat: no-repeat;
+			cursor: pointer;
+		}
+		
+	.pp_previous
+	{
+		float: left;
+	}
+		
+		.pp_previous:hover
+		{
+			background-position: center left;
+			background-repeat: no-repeat;
+			cursor: pointer;
+		}
+		
+.pp_expand,
+.pp_contract
+{
+	position: absolute;
+	top: 10px;
+	right: 20px;
+	display: none;
+	width: 39px;
+	height: 39px;
+	z-index: 20000;
+	cursor: pointer;
+	text-indent: -10000px;
+}
+
+	.pp_expand
+	{
+		background-position: -117px 0;
+	}
+
+		.pp_expand:hover
+		{
+			background-position: -117px -39px;
+		}
+
+		.pp_expand:active
+		{
+			background-position: -117px -78px;
+		}
+
+	.pp_contract
+	{
+		background-position: -156px 0;
+	}
+
+		.pp_contract:hover
+		{
+			background-position: -156px -39px;
+		}
+
+		.pp_contract:active
+		{
+			background-position: -156px -78px;
+		}
+
+/* Details Beneath */
+
+.pp_details
+{
+	position: relative;
+	float: right;
+	margin: 10px 0 17px 0;
+}
+
+	/* Title */
+
+	.ppt /* same as H2 - look above */
+	{
+		display: none;
+		z-index: 9999;
+		margin: 13px 12px 0 18px;
+	}
+
+	/* Description */
+
+	.pp_description
+	{
+		display: none;
+		margin: 12px 12px 0 18px;
+	}
+
+	/* Navigation */
+	
+	.pp_nav
+	{
+		width: 200px;
+		height: 40px;
+		position: absolute;
+		top: 6px;
+		right: 8px;
+	}
+	
+		/* Item Numbering */
+		
+		.currentTextHolder
+		{
+			position: absolute;
+			top: 6px;
+			right: 132px;
+			font-size: 15px;
+		}
+		
+		/* Prev / Next Buttons */
+		
+		.pp_arrow_previous,
+		.pp_arrow_next
+		{
+			display: block;
+			overflow: hidden;
+			position: absolute;
+			top: 0px;
+			height: 39px;
+			width: 39px;
+			text-indent: -10000px;
+		}
+
+		.pp_arrow_previous
+		{
+			right: 78px;
+			background-position: 0 0;
+		}
+		
+			.pp_arrow_previous:hover
+			{
+				background-position: 0 -39px;
+			}
+			
+			.pp_arrow_previous:active
+			{
+				background-position: 0 -78px;
+			}
+			
+		.pp_arrow_next
+		{
+			right: 39px;
+			background-position: -39px 0;
+		}
+		
+			.pp_arrow_next:hover
+			{
+				background-position: -39px -39px;
+			}
+			
+			.pp_arrow_next:active
+			{
+				background-position: -39px -78px;
+			}
+		
+		/* Close Button */
+		
+		.pp_close
+		{	
+			position: absolute;
+			top: 0px;
+			right: 0px;
+			display: block;
+			width: 39px;
+			height: 39px;
+			text-indent: -10000px;
+			cursor: pointer;
+			background-position: -78px 0;
+		}
+		
+			.pp_close:hover
+			{
+				background-position: -78px -39px;
+			}
+			
+			.pp_close:active
+			{
+				background-position: -78px -78px;
+			}
+
+/**********************************************
+ * 9. ABOUT
+ **********************************************/
+
+ /* Portrait Image */
+
+#about-portrait
+{
+
+	float: right;
+	margin: 14px 0 10px 18px;
+	
+	/* Rounded corners and shadow is applied via "Image Frames" above */
+	
+}
+
+#about .content  > p {
+
+}
+
+/* Skills & Experience */
+
+#about-skills,
+#about-experience
+{
+	float: left;
+	position: relative;
+	top: 8px;
+	width: 894px; /* half of full width minus section padding/spacing/borders */
+}
+		
+	/* Heading */
+	
+	#about-skills h2,
+	#about-experience h2
+	{
+		margin-top: 0;
+		margin-bottom: 20px;
+	}
+	
+	/* Lists */
+	
+	#about-skills ul,
+	#about-experience ul
+	{
+		margin: 0;
+		padding: 0;
+		list-style-type: none; /* prepare for check icon */
+		font-style: italic;
+	}
+	
+		/* Check Icon */
+
+		#about-skills li,
+		#about-experience li
+		{
+			padding: 0 0 0 28px; /* make room for icon */
+			background-position: 1px 0;
+			background-repeat: no-repeat;
+		}
+
+	/* Skills */
+	
+	#about-skills
+	{
+		margin-right: 0px; /* space between sections */
+	}
+	
+		/* Two Columns (lists) side-by-side */
+		
+		#about-skills ul
+		{
+			float: left;
+			width: 33.33333%;
+		}
+ 
+
+			
+ /**********************************************
+ * 12. CONTACT
+ **********************************************/
+
+.section-contact > header
+{
+	margin-bottom: 28px;
+}
+ 
+/* Social Media Icons */
+
+.social-media /* <ul> */
+{
+	position: absolute;
+	top: 140px;
+	right: 0px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+	.social-media li
+	{
+		margin-left: 8px; /* space between icons */
+		float: left;
+	}
+
+		/* use on <a> tags */
+	
+		.icon-twitter,
+		.icon-facebook,
+		.icon-google-plus,
+		.icon-dribbble,
+		.icon-forrst,
+		.icon-flickr,
+		.icon-youtube,
+		.icon-vimeo,
+		.icon-skype,
+		.icon-linkedin
+		{
+			display: block;
+			float: left;
+			width: 38px;
+			height: 44px;
+			background-repeat: no-repeat;
+			text-indent: -10000px;
+		}
+
+		.icon-twitter
+		{
+			background-position: 0 0;
+		}
+		
+		.icon-facebook
+		{
+			background-position: -50px 0;
+		}
+		
+		.icon-google-plus
+		{
+			background-position: -100px 0;
+		}
+		
+		.icon-linkedin
+		{
+			background-position: -450px 0;
+		}
 
 
+	
+#contact-info
+{
+	width: 100%;
+}
 
-/*===============Layout=========================*/
-/*===============================================*/
-/*===============================================*/
-body{margin:0;background:#333333 url(../images/design/bg-overall.jpg) repeat left top;
-font-size:12px;font-family: OfficinaSansITCStd,Helvetica,"Trebuchet MS","Lucida Grande",arial,verdana,sans-serif;}
+	/* Single Box */
 
+	#contact-info .box
+	{
+		margin-bottom: 32px;
+	}
 
-/*===============Header=========================*/
-#header-wrapper{background: url(../images/design/bg-overall.jpg) repeat left top;border-bottom:1px solid #152333;padding-bottom:17px;}
-#header-wrapper #header{height:72px;overflow:hidden;}
+		/* Headings */
 
-/*===============Menu=========================*/
-#navigation{margin:18px 0 0;padding:0;}
-#navigation *{margin:0;padding:0;}
-#navigation li{margin-right:10px;width:50px;}
-#navigation li.last{margin-right:0;}
-#navigation li a{line-height:36px;color:#fafafa;}
-#navigation li a:hover,#home li.home a,#work li.work a, #service li.service a,#contact li.contact a{
-border-bottom:1px solid #C63E00;line-height:35px;}
+		#contact-form-container h2,
+		#contact-info h2
+		{
+			margin: 0;
+		}
 
-
-/*===============Featured=========================*/
-#featured-wrapper{height:234px;color:#fafafa;font-size:13px;background: url(../images/design/bg-overall.jpg) repeat left top;overflow:hidden;}
-#featured{padding:18px 0 0;float:left;display:inline;}
-#featured a{}
-.pagination a{float:left;display:inline;line-height:20px;width:20px;background: url(../images/design/bg-pg-2.jpg) no-repeat left top;
-              margin-right:5px;color:#fff;font-size:10px;text-align:center;}
-.pagination a.seeMore{background-image:none;color:#c63e00;font-size:12px;}
-#featured-customer h3{margin: 0 0 .75em;}
-#featured-customer p.work-details{color:#459AC5;}
-#home .stepcarousel {height: 198px; /*Height should enough to fit largest content's height*/}
-
-/*===============Content=========================*/
-#content-wrapper{height:108px;padding:18px 0 0;color:#fafafa;font-size:13px;
-background: url(../images/design/bg-overall.jpg) repeat left top;overflow:hidden;}
-#content .web-text h3,#success h3{color:#3197C0;}
-/*===============Content::SubContent=========================*/
-#sub-content h3{margin-bottom:0.375em;}
-
-
-
-/*===============Extra=========================*/
-#extra-wrapper{height:180px;color:#fafafa;overflow:hidden;padding:18px 0;background: url(../images/design/bg-overall.jpg) repeat left top;}
- #extra{border-top:1px solid #152333;padding-top:1.5em;}
-#extra a,#extra h2,#extra h3,#extra h4,#extra h5,#extra h6{color:#fafafa;margin-top:0;}
-
-/*===============Extra::Widgets=========================*/
-
-.box-reading *{padding:0;margin:0;}
-.box-reading img{float:left;display:inline;margin-right:10px;}
-.box-reading .last img{margin-right:0px;}
-.box-cms  h3{margin:0.75em 0 0.375em;font-size:12px;font-weight:normal;text-align:center;color:#459AC5;}
-.box-cms p{color:#fafafa;text-align:center;}
-.box-cms  img{float:left;margin:0 0 .375em ;}
-
-/*===============Sub-Page=========================*/
-/*===============================================*/
-/*===============================================*/
-.sub-page #content-wrapper{height:auto;}
-.sub-work #content-wrapper{display:none;}
-.sub-work #footer-wrapper{}
-.sub-page #extra-wrapper{height:auto;padding-top:36px;}
-.sub-work #extra-wrapper{padding-top:36px;min-height:400px;}
-.sub-work #extra h3{color:#3197C0;}
-.sub-contact #content-container{height:550px;}
-#intro-wrapper{color:#fafafa;font-size:16px;background: url(../images/design/bg-overall.jpg) repeat left top;padding:0px 0 18px;}
-.screen-intro{padding-top:3em;}
-.screen-first{padding-top:1.5em;}
-.screen{padding:0 0 6em;}
-.screen-last{margin-bottom:12em;}
-.has-screens{min-height:600px;height:auto!important;height:600px;}
-.details{position:relative;}
-.details h3,.feedback a{color:#3197C0;}
-.sub-page ul.work-details,p.feedback{font-size:12px;margin-bottom:18px;}
-p.screen-more,p.scroll {font-size:11px;line-height:10px;color:#459AC5;}
-p.scroll a,#extra .scroll a{float:left;display:inline;margin-right:5px;color:#C63E00;font-size:10px;}
-p.screen-more .screen-selected {background: url(../images/design/bg-screen-selected.jpg) no-repeat left top;color:#fff;}
-.box-works{padding:.375em 0;margin:1.5em 40px 1.5em 0;}
-.box-works h3{margin-bottom:0em;font-size:12px;}
-.box-works-small p{color:#636568;font-style:italic;}
-.list-service li{line-height:18px;font-size:14px;border-bottom:1px solid #101B27;padding:.75em  0;color:#3197C0;}
-/*===============Footer=========================*/
-#footer-wrapper{display:none;padding-top:18px;background:url(../images/design/bg-overall.jpg) repeat left top;}
-#footer{height:36px;background:#101B27; overflow:hidden;color:#fafafa;padding:9px 10px;}
-#footer a,#footer h2,#footer h3,#footer h4,#footer h5,#footer h6{color:#210909;}
-
-
-.stepcarousel {position: relative; /*leave this value alone*/
-overflow: scroll; /*leave this value alone*/
-height: 288px; /*Height should enough to fit largest content's height*/}
-
-.stepcarousel .scrolling {position: absolute; /*leave this value alone*/left: 0;top: 0;}
-.stepcarousel .box-works-small {float: left; /*leave this value alone*/
-overflow: hidden; /*clip content that go outside dimensions of holding panel DIV*/}
-
-/*===============Contact Form=========================*/
-
-fieldset{border:none;margin:0;padding:0;}
-label{font-size:12px;font-weight:normal;line-height:36px;}
-input,textarea,button{background:#101B27;border:1px solid #000;color:#fafafa;}
-input{width:268px;}
-button{font-size:12px;padding:.375em;}
-textarea{width:540px;}
-#topic{width:550px;}
+		/* Content */
+		
+		#contact-info p
+		{
+			margin-top: 20px;
+		}
+.del {
+	text-decoration: line-through;
+}
